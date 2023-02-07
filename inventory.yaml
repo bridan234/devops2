@@ -3,7 +3,7 @@
 ubuntu-servers:
   hosts:
     ub01:
-      ansible_host: 20.106.176.42:22
+      ansible_host: 10.2.0.4
       ansible_user: azureuser
       ansible_private_ssh_key_file: /home/azureuser/.ssh/key.pem
     ub02:
