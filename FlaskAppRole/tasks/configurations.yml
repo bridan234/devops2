@@ -1,0 +1,21 @@
+---
+
+- name: Install Python3 virtual environment
+  hosts:  all
+  become: yes
+
+  tasks:
+  - name: Read-write git checkout from github
+  git:
+    repo: https://github.com/bridan234/devops2.git
+    dest: /home/azureuser/playbooks/flaskPlaybook/
+    accept_hostkey: true
+    key_file: /home/azureuser/.ssh/jenkins_key
+  
+    - name: start flask app
+    shell: "python3 /home/azureuser/playbooks/flaskPlaybook/*.py"
+      environment:
+        FLASK_APP: /home/azureuser/playbooks/flaskPlaybook/*.py
+    #when: ansible_distribution == "Ubuntu"
+
+...
