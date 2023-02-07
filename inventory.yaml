@@ -5,10 +5,10 @@ ubuntu-servers:
     ub01:
       ansible_host: 10.0.0.6
       ansible_user: azureuser
-      ansible_private_ssh_key_file: /home/azureuser/.ssh/key.pem
+      ansible_ssh_private_key_file: /home/azureuser/.ssh/key.pem
     ub02:
       ansible_host: 10.0.0.7
-      ansible_private_ssh_key_file: /home/azureuser/.ssh/key.pem
+      ansible_ssh_private_key_file: /home/azureuser/.ssh/key.pem
       ansible_user: azureuser
 
 centOS-servers:
@@ -16,8 +16,8 @@ centOS-servers:
     cent01:
       ansible_host: 10.3.0.4
       ansible_user: azureuser
-      ansible_private_ssh_key_file: /home/azureuser/.ssh/key.pem
+      ansible_ssh_private_key_file: /home/azureuser/.ssh/key.pem
     cent02:
       ansible_host: 10.3.0.4
-      ansible_private_ssh_key_file: /home/azureuser/.ssh/key.pem
+      ansible_ssh_private_key_file: /home/azureuser/.ssh/key.pem
       ansible_user: azureuser
