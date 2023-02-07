@@ -1,0 +1,27 @@
+---
+
+- name: Install Python3 virtual environment
+  hosts:  all
+  become: yes
+
+  tasks:
+  - name: Install virtual environment
+    apt:
+      name: python3.8-venv
+      state: present
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install flask with pip
+    pip: 
+      name: flask
+      state: present
+    when: ansible_distribution == "Ubuntu"
+
+  - name: start flask app
+    shell: "python3 flaskApp2.py"
+      environment:
+        FLASK_APP: /var/www/main.py
+    when: ansible_distribution == "Ubuntu"
+    
+...
